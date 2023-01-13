@@ -7,6 +7,7 @@ import InputWithLabel from "../components/Common/InputWithLabel";
 import GoogleSigninButton from "../components/Common/GoogleSigninButton";
 
 import { getSession, signIn } from "next-auth/react";
+import domain_url from "../utilities/doamin_url";
 
 import { useFormik } from "formik";
 import signup_validation from "../lib/formikValidation/signup_validation";
@@ -36,7 +37,7 @@ const signup = () => {
     setLoading(true);
 
     axios
-      .post("http://localhost:3000/api/auth/signup", values)
+      .post(`${domain_url}/api/auth/signup`, values)
       .then((result) => {
         signIn("credentials", {
           redirect: false,

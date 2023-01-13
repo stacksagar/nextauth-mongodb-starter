@@ -1,11 +1,12 @@
 import React from "react";
 
 import { signIn } from "next-auth/react";
+import domain_url from "../../utilities/doamin_url";
 
 const GoogleSigninButton = () => {
   function handleGoogleSignin() {
     signIn("google", {
-      callbackUrl: "http://localhost:3000",
+      callbackUrl: domain_url,
     });
   }
 
