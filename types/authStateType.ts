@@ -1,4 +1,4 @@
-export default interface authState {
+export default interface authStateType {
   user?: user;
   authenticated: boolean;
 }

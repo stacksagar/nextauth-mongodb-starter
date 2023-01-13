@@ -11,6 +11,9 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      // httpOptions: {
+      //   timeout: 100000,
+      // },
     }),
 
     // With CustomCredentials

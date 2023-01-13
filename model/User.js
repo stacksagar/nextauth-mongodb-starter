@@ -13,14 +13,14 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 
-  phone: String,
-
   password: {
     type: String,
     required: true,
   },
 
   balance: Number,
+  phone: String,
+  image: String,
 
   deposits: Array,
   orders: Array,

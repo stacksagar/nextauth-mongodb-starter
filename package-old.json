@@ -2,11 +2,11 @@
   "name": "nextauto",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nextauth-mongodb-starter.vercel.app",
+  "homepage": "http://nextauth.joblessbd.com",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

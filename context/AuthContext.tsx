@@ -1,13 +1,24 @@
 import { createContext, useReducer, useContext } from "react";
-import authState from "../types/authState";
-const AuthState: authState = {
+import authStateType from "../types/authStateType";
+const AuthState: authStateType = {
   user: {},
   authenticated: false,
 };
 
-const reducer = (state = AuthState, action: { type: string; payload: any }) => {
+export interface authActionsType {
+  type: "set_user" | "set_authenticated";
+  payload?: any;
+}
+
+const reducer = (state: authStateType, action: authActionsType) => {
   const { type, payload } = action;
   switch (type) {
+    case "set_user":
+      return { ...state, user: payload };
+
+    case "set_authenticated":
+      return { ...state, authenticated: payload };
+
     default:
       return state;
   }
