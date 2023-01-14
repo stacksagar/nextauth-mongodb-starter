@@ -7,7 +7,6 @@ import InputWithLabel from "../components/Common/InputWithLabel";
 import GoogleSigninButton from "../components/Common/GoogleSigninButton";
 
 import { getSession, signIn } from "next-auth/react";
-import domain_url from "../utilities/doamin_url";
 
 import { useFormik } from "formik";
 import signup_validation from "../lib/formikValidation/signup_validation";
@@ -17,6 +16,8 @@ import { useRouter } from "next/router";
 import TostMessage from "../components/Utils/TostMessage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+
+import axiosInstance from "../lib/axiosInstance";
 
 const signup = () => {
   const router = useRouter();
@@ -36,8 +37,8 @@ const signup = () => {
   function signup(values: any) {
     setLoading(true);
 
-    axios
-      .post(`${domain_url}/api/auth/signup`, values)
+    axiosInstance
+      .post(`/api/auth/signup`, values)
       .then((result) => {
         signIn("credentials", {
           redirect: false,
@@ -54,7 +55,7 @@ const signup = () => {
         });
       })
       .catch((error: any) => {
-        const errorMessage = error.response.data.message;
+        const errorMessage = error?.response?.data?.message;
         if (errorMessage || error?.message) {
           setError(errorMessage || error?.message);
         }

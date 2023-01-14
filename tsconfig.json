@@ -20,7 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.jsx",
-    "lib/connectDatabase.js",
+    "lib/connectDatabase.ts",
     "pages/_app.js"
   ],
   "exclude": ["node_modules"]

@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import connectDatabase from "../../../lib/connectDatabase";
 import User from "../../../model/User";
 import argon from "argon2";
-import response_message from "../../../utilities/server/response_message";
+import response_message from "../../../lib/response_message";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -32,6 +32,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       }
     );
   } catch (error: any) {
-    res.status(500).json({ message: error?.message });
+    return response_message(res, 500, error?.message);
   }
 }

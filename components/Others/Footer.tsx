@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const [admin, set_admin] = useState({
@@ -72,12 +73,11 @@ const Footer = () => {
                   About
                 </h3>
                 <div>
-                  <a
-                    className="text-sm text-center lg:text-left text-white text-opacity-70 hover:text-opacity-100 cursor-pointer block mb-3 last:mb-0"
-                    href="#"
-                  >
-                    Terms &amp; condition
-                  </a>
+                  <Link href="/terms-and-conditions">
+                    <span className="text-sm text-center lg:text-left text-white text-opacity-70 hover:text-opacity-100 cursor-pointer block mb-3 last:mb-0">
+                      Terms &amp; condition
+                    </span>
+                  </Link>
                   <a
                     className="text-sm text-center lg:text-left text-white text-opacity-70 hover:text-opacity-100 cursor-pointer block mb-3 last:mb-0"
                     href="#"
@@ -146,17 +146,32 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center justify-center lg:justify-start mt-5 space-x-4">
-              <a href={admin?.facebook} title='Facebook' target="_blank" rel="noreferrer">
+              <a
+                href={admin?.facebook}
+                title="Facebook"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="w-9 h-9 flex-shrink-0 rounded-full overflow-hidden flex items-center justify-center p-2 bg-white bg-opacity-50 hover:bg-opacity-60 text-blue-600">
                   <FontAwesomeIcon icon={faFacebook} />
                 </div>
               </a>
-              <a href={admin?.youtube} title="Youtube" target="_blank" rel="noreferrer">
+              <a
+                href={admin?.youtube}
+                title="Youtube"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="w-9 h-9 flex-shrink-0 rounded-full overflow-hidden flex items-center justify-center p-2 bg-white bg-opacity-50 hover:bg-opacity-60 text-red-600">
                   <FontAwesomeIcon icon={faYoutube} />
                 </div>
               </a>
-              <a href={admin?.instagram} title="Instagram" target="_blank" rel="noreferrer">
+              <a
+                href={admin?.instagram}
+                title="Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="w-9 h-9 flex-shrink-0 rounded-full overflow-hidden flex items-center justify-center p-2 bg-white bg-opacity-50 hover:bg-opacity-60 text-[#f500b5]">
                   <FontAwesomeIcon icon={faInstagram} />
                 </div>

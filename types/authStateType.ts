@@ -1,13 +1,14 @@
 export default interface authStateType {
-  user?: user;
-  authenticated: boolean;
+  user?: userType;
+  orders?: [];
+  withdraw?: [];
+  deposits?: [];
 }
 
-export type user = {
-  email?: string;
-  name?: string;
+export type userType = {
+  _id?: string;
   balance?: number;
-  deposits?: object;
-  orders?: object;
-  withdraw?: object;
+  email?: string;
+  image?: string;
+  name?: string;
 };

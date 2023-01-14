@@ -1,3 +1,4 @@
+import { getSession } from "next-auth/react";
 import React from "react";
 
 const TermsAndConditions = () => {
@@ -46,3 +47,18 @@ const TermsAndConditions = () => {
 };
 
 export default TermsAndConditions;
+
+export async function getServerSideProps({ req }: { req: any }) {
+  const session = await getSession({ req });
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+}

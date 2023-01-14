@@ -1,12 +1,12 @@
 import React from "react";
 
 import { signIn } from "next-auth/react";
-import domain_url from "../../utilities/doamin_url";
+import { domain_url } from "../../lib/axiosInstance";
 
 const GoogleSigninButton = () => {
   function handleGoogleSignin() {
     signIn("google", {
-      callbackUrl: domain_url,
+      callbackUrl: domain_url(),
     });
   }
 
