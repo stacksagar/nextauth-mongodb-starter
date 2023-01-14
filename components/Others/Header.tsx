@@ -66,7 +66,7 @@ const Header = () => {
             )}
           </button>
 
-          {true ? (
+          {false(
             <div className="relative w-fit z-50">
               <button
                 onClick={() => set_opo((p) => !p)}
@@ -206,18 +206,7 @@ const Header = () => {
             </div>
           ) : (
             <>
-              <Link
-                href="/register"
-                className="items-center flex text-xs sm:text-sm transition-all font-medium bg-green-primary text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full focus:ring-2"
-              >
-                Register
-              </Link>
-              <Link
-                href="/login"
-                className="items-center flex text-xs sm:text-sm transition-all font-medium bg-transparent border border-green-primary text-dark-primary hover:border-transparent hover:bg-blue-600 hover:text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full focus:ring-2 focus:border-transparent"
-              >
-                Login
-              </Link>
+           
             </>
           )}
         </div>
